@@ -57,9 +57,12 @@ function AvatarScene({ headRef, lipSyncRef }: AvatarSceneProps) {
   );
 
   useEffect(() => {
-    const vrm = gltf.userData.vrm;
+    const vrm = gltf?.userData?.vrm;
 
-    if (!vrm) return;
+    if (!vrm) {
+      console.error('VRM failed to load');
+      return;
+    }
 
     VRMUtils.removeUnnecessaryVertices(gltf.scene);
     VRMUtils.removeUnnecessaryJoints(gltf.scene);
