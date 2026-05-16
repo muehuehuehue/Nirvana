@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
 
   return {
-    base: '/YOUR_REPO_NAME/',
+    base: 'Nirvana',
 
     plugins: [
       react(),
